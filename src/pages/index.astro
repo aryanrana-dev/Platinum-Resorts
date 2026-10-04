@@ -1,8 +1,148 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
+import Navbar from '../components/react/Navbar';
+import Hero from '../components/astro/Hero.astro';
+import SpacesCarousel from '../components/react/SpacesCarousel';
+import VenueHighlights from '../components/astro/VenueHighlights.astro';
+import InquiryForm from '../components/astro/InquiryForm.astro';
+import FAQ from '../components/astro/FAQ.astro';
+import MapFooter from '../components/astro/MapFooter.astro';
+import WhatsAppFAB from '../components/astro/WhatsAppFAB.astro';
 ---
 
 <Layout>
-	
+  <!-- Interactive Sticky Glass Navbar Island -->
+  <Navbar client:load />
+
+  <main>
+    <!-- Hero Section with GSAP Media Scale Target -->
+    <Hero />
+
+    <!-- Spaces & Pavilions React Island (Embla Carousel) -->
+    <SpacesCarousel client:load />
+
+    <!-- Venue Amenities & Highlights -->
+    <VenueHighlights />
+
+    <!-- Reservation & Concierge Inquiries -->
+    <InquiryForm />
+
+    <!-- Frequently Asked Questions -->
+    <FAQ />
+  </main>
+
+  <!-- Location & Footer -->
+  <MapFooter />
+
+  <!-- Floating WhatsApp Concierge Button -->
+  <WhatsAppFAB />
 </Layout>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Initialize animations once DOM is ready
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. Hero Content Entry Animations
+    const heroElements = document.querySelectorAll('.hero-fade');
+    if (heroElements.length > 0) {
+      gsap.from(heroElements, {
+        opacity: 0,
+        y: 25,
+        duration: 1,
+        stagger: 0.12,
+        ease: 'power3.out',
+        delay: 0.2
+      });
+    }
+
+    // 2. Hero Media Container GSAP Scroll Trigger (scale and depth effect)
+    const heroMedia = document.getElementById('hero-media-container');
+    if (heroMedia) {
+      gsap.to(heroMedia, {
+        scale: 1.05,
+        scrollTrigger: {
+          trigger: '#hero',
+          start: 'top top',
+          end: 'bottom top',
+          scrub: 1,
+        }
+      });
+    }
+
+    // 3. Highlights Section Scroll Trigger
+    const highlightFades = document.querySelectorAll('.highlight-fade');
+    if (highlightFades.length > 0) {
+      gsap.fromTo(
+        highlightFades,
+        { opacity: 0, y: 20 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power2.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: {
+            trigger: '#highlights',
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      );
+    }
+
+    const highlightCards = document.querySelectorAll('.highlight-card');
+    if (highlightCards.length > 0) {
+      gsap.fromTo(
+        highlightCards,
+        { opacity: 0, y: 25 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.08,
+          ease: 'power3.out',
+          clearProps: 'opacity,transform',
+          scrollTrigger: {
+            trigger: '#highlights',
+            start: 'top 85%',
+            once: true,
+          },
+        }
+      );
+    }
+
+    // 4. Inquiries Form Reveal
+    const inquirySection = document.getElementById('inquiries');
+    if (inquirySection) {
+      const inquiryForm = inquirySection.querySelector('form');
+      if (inquiryForm) {
+        gsap.fromTo(
+          inquiryForm,
+          { opacity: 0, y: 30 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: 0.9,
+            ease: 'power3.out',
+            clearProps: 'opacity,transform',
+            scrollTrigger: {
+              trigger: '#inquiries',
+              start: 'top 85%',
+              once: true,
+            },
+          }
+        );
+      }
+    }
+
+    // Recalculate trigger positions once assets load
+    window.addEventListener('load', () => {
+      ScrollTrigger.refresh();
+    });
+  });
+</script>

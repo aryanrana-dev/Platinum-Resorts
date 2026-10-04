@@ -1,0 +1,105 @@
+---
+import { MapPin, Phone, Mail } from 'lucide-react';
+---
+
+<footer id="location" class="bg-[#08080A] border-t border-white/10 pt-16 pb-12 text-white relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- Split 2-Column Content -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 pb-16 border-b border-white/10">
+      
+      <!-- Left Column: Hotel Info & Contacts -->
+      <div class="lg:col-span-6 space-y-6">
+        
+        <!-- Brand Logo -->
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full border border-[#D4AF37] bg-[#111216] flex items-center justify-center text-[#D4AF37] shadow-[0_0_10px_rgba(212,175,55,0.3)]">
+            <span class="font-serif font-bold text-base text-[#E8C86A]">P</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="font-serif font-bold text-base tracking-[0.2em] text-white">
+              PLATINUM HOTEL &amp; RESORT
+            </span>
+          </div>
+        </div>
+
+        <!-- Description Paragraph -->
+        <p class="text-xs sm:text-sm text-neutral-400 font-light leading-relaxed max-w-lg">
+          The premier destination in Zirakpur for unforgettable weddings, family celebrations, and corporate events. Offering grand banquet halls, expansive green lawns, luxury guest stays, and warm Indian hospitality.
+        </p>
+
+        <!-- Contact & Location Rows -->
+        <div class="space-y-3.5 pt-2">
+          <!-- Physical Address -->
+          <div class="flex items-start gap-3 text-xs text-neutral-300">
+            <MapPin className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
+            <div>
+              <span class="font-semibold text-white">Physical Address:</span> Patiala Rd, adj. Radisson Hotel, Nabha, Zirakpur, Punjab 140603
+            </div>
+          </div>
+
+          <!-- Concierge Phone -->
+          <div class="flex items-start gap-3 text-xs text-neutral-300">
+            <Phone className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
+            <div>
+              <span class="font-semibold text-white">Direct Booking &amp; Inquiries:</span> 
+              <a href="tel:+919815786936" class="hover:text-[#E8C86A] transition-colors ml-1">+91 9815786936</a>
+              <a href="tel:+919877680126" class="hover:text-[#E8C86A] transition-colors ml-1">+91 9877680126</a>
+            </div>
+          </div>
+
+          <!-- Direct Inquiries Email -->
+          <div class="flex items-start gap-3 text-xs text-neutral-300">
+            <Mail className="w-4 h-4 text-[#D4AF37] flex-shrink-0 mt-0.5" />
+            <div>
+              <span class="font-semibold text-white">Email Us:</span> 
+              <a href="mailto:royalcuisine936@gmail.com" class="hover:text-[#E8C86A] transition-colors ml-1 underline decoration-neutral-600 underline-offset-4">
+                royalcuisine936@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Key Amenities / Quick Links Sub-bar -->
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-4 text-xs font-medium text-neutral-400">
+          <span class="text-[#E8C86A]">✦ Valet Parking</span>
+          <span>•</span>
+          <span class="text-[#E8C86A]">✦ 24/7 Power Backup</span>
+          <span>•</span>
+          <span class="text-[#E8C86A]">✦ Customized Menus</span>
+          <span>•</span>
+          <a href="#faq" class="hover:text-[#E8C86A] transition-colors">FAQs</a>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Live Google Map -->
+      <div class="lg:col-span-6 flex flex-col justify-center">
+        <div class="relative w-full h-full min-h-[350px] rounded-xl overflow-hidden border border-gray-800 shadow-lg bg-[#111216]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3432.257540232495!2d76.7996381!3d30.6375336!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390feb175514933d%3A0xd89cd8db92423a4b!2sPlatinum%20Resorts!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin"
+            title="Platinum Resorts Location Map"
+            class="w-full h-full min-h-[350px] rounded-xl border border-gray-800 shadow-lg contrast-125"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Copyright & Legal Links -->
+    <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-neutral-500">
+      <p>© 2026 Platinum Hotel &amp; Resort. All rights reserved. Premier Wedding &amp; Event Venue.</p>
+      
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-neutral-300 transition-colors">Privacy Policy</a>
+        <a href="#" class="hover:text-neutral-300 transition-colors">Terms of Service</a>
+        <a href="#" class="hover:text-neutral-300 transition-colors">Press &amp; Media Kit</a>
+      </div>
+    </div>
+
+  </div>
+</footer>

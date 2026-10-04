@@ -1,0 +1,62 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+const faqs: FAQItem[] = [
+  {
+    question: "Do you have ample parking for large wedding gatherings?",
+    answer: "Yes, we offer secure, spacious parking to comfortably accommodate multiple cars for your guests."
+  },
+  {
+    question: "Do you provide in-house catering and decoration services?",
+    answer: "Yes, our expert empanelled decorators and culinary teams provide customizable, multi-cuisine menus and bespoke theme setups."
+  },
+  {
+    question: "Are there rooms available for outstation guests and the bridal party?",
+    answer: "Absolutely. We offer a range of luxury rooms and suites designed for comfortable stays and seamless bridal preparation."
+  }
+];
+---
+
+<section id="faq" class="py-20 lg:py-24 bg-[#0A0A0C] border-t border-white/5 relative">
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header -->
+    <div class="text-center space-y-3 mb-12">
+      <span class="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-[#D4AF37] uppercase">
+        ✦ Event Planning &amp; Venue Details ✦
+      </span>
+      <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
+        Frequently Asked Questions
+      </h2>
+      <p class="text-xs sm:text-sm text-neutral-400 font-light">
+        Everything you need to know about booking our banquet halls, lawns, catering, and guest rooms.
+      </p>
+    </div>
+
+    <!-- Accordion / FAQ List -->
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <details class="group bg-[#111216] border border-white/10 rounded-xl p-5 sm:p-6 transition-all duration-300 hover:border-[#D4AF37]/40 open:border-[#D4AF37]/50 open:bg-[#15161C]">
+          <summary class="flex items-center justify-between cursor-pointer list-none text-left font-serif font-semibold text-sm sm:text-base text-white group-hover:text-[#F5E8C7] transition-colors focus:outline-none">
+            <span class="flex items-center gap-3">
+              <span class="text-xs font-mono text-[#D4AF37]">0{index + 1}.</span>
+              <span>{faq.question}</span>
+            </span>
+            <span class="text-[#D4AF37] transition-transform duration-300 group-open:rotate-180 flex-shrink-0 ml-4">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </span>
+          </summary>
+          <div class="mt-4 pt-4 border-t border-white/5 text-xs sm:text-sm text-neutral-400 leading-relaxed font-light pl-6">
+            {faq.answer}
+          </div>
+        </details>
+      ))}
+    </div>
+
+  </div>
+</section>

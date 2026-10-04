@@ -1,0 +1,105 @@
+---
+import { 
+  Car, 
+  BedDouble, 
+  Zap, 
+  UtensilsCrossed, 
+  Users, 
+  ShieldCheck, 
+  Crown, 
+  Bell 
+} from 'lucide-react';
+
+interface HighlightItem {
+  icon: any;
+  title: string;
+}
+
+const highlights: HighlightItem[] = [
+  {
+    icon: Car,
+    title: 'Parking Available',
+  },
+  {
+    icon: BedDouble,
+    title: 'Hotel rooms are also provided',
+  },
+  {
+    icon: Zap,
+    title: 'Power Backup',
+  },
+  {
+    icon: UtensilsCrossed,
+    title: 'In-palace catering available',
+  },
+  {
+    icon: Users,
+    title: 'Up to 600 guests can be welcomed',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Consistent satisfactory events organized',
+  },
+  {
+    icon: Crown,
+    title: 'Best in Zirakpur',
+  },
+  {
+    icon: Bell,
+    title: 'Support throughout the venue',
+  },
+];
+---
+
+<section id="highlights" class="py-20 lg:py-28 bg-[#0A0A0C] border-t border-white/5 relative overflow-hidden">
+  <!-- Subtle Background Glow -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-b from-[#D4AF37]/10 via-[#B89326]/5 to-transparent blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Section Header Block -->
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-12 sm:mb-16">
+      
+      <!-- Eyebrow Pill -->
+      <span class="highlight-fade text-[10px] sm:text-xs font-bold tracking-[0.25em] text-[#D4AF37] uppercase mb-3">
+        ESTATE AMENITIES &amp; CONVENIENCES
+      </span>
+
+      <!-- Main Title -->
+      <h2 class="highlight-fade font-serif font-bold text-3xl sm:text-5xl md:text-6xl text-white tracking-tight">
+        Venue Highlights
+      </h2>
+
+      <!-- Subtle Gold Underline Accent -->
+      <div class="highlight-fade w-20 sm:w-24 h-[2.5px] bg-[#D4AF37] rounded-full mt-4 mb-5"></div>
+
+      <!-- Description Paragraph -->
+      <p class="highlight-fade text-xs sm:text-sm md:text-base text-neutral-400 font-light max-w-2xl mx-auto leading-relaxed">
+        Meticulously curated infrastructure and hospitality essentials ensuring seamless grand celebrations.
+      </p>
+    </div>
+
+    <!-- 4x2 Grid of Amenity Cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+      {highlights.map((item) => {
+        const IconComponent = item.icon;
+        return (
+          <div class="highlight-card bg-[#111216] border border-white/10 rounded-2xl p-5 sm:p-6 flex items-center gap-4 hover:border-[#D4AF37]/40 hover:bg-[#15161D] hover:-translate-y-1 transition-all duration-300 shadow-xl group">
+            
+            <!-- Icon Badge Container -->
+            <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-[#1B1C22] border border-[#D4AF37]/30 flex items-center justify-center flex-shrink-0 text-[#E8C86A] group-hover:border-[#D4AF37] group-hover:text-[#D4AF37] group-hover:shadow-[0_0_15px_rgba(212,175,55,0.25)] transition-all duration-300">
+              <IconComponent className="w-5 h-5 sm:w-5 sm:h-5 stroke-[1.75]" />
+            </div>
+
+            <!-- Card Title Text -->
+            <span class="text-xs sm:text-sm font-semibold text-neutral-200 group-hover:text-white transition-colors leading-snug">
+              {item.title}
+            </span>
+
+          </div>
+        );
+      })}
+    </div>
+
+  </div>
+</section>

@@ -1,0 +1,191 @@
+---
+const ntfyUrl = import.meta.env.PUBLIC_NTFY_URL || import.meta.env.NTFY_URL || 'https://ntfy.sh/my_secret_venue_leads_alert';
+---
+
+<section id="inquiries" class="py-20 lg:py-28 bg-[#0A0A0C] relative overflow-hidden">
+  <!-- Subtle Glow Layer -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[400px] bg-gradient-to-r from-[#D4AF37]/10 via-[#B89326]/5 to-transparent blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    
+    <!-- Form Outer Container -->
+    <div class="max-w-3xl mx-auto bg-[#111216] border border-[#282A33] rounded-2xl sm:rounded-3xl p-6 sm:p-10 md:p-12 shadow-2xl relative overflow-hidden gold-border-glow">
+      
+      <!-- Top Accent Line -->
+      <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent"></div>
+
+      <!-- Header Content -->
+      <div class="text-center space-y-3 mb-8 sm:mb-10">
+        <span class="text-[10px] sm:text-xs font-bold tracking-[0.25em] text-[#D4AF37] uppercase">
+          ✦ Plan Your Celebration ✦
+        </span>
+        <h2 class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-white tracking-tight">
+          Check Availability &amp; Get a Quote
+        </h2>
+        <p class="text-xs sm:text-sm text-neutral-400 font-light">
+          Connect with our wedding and event planning team within 24 hours for personalized packages.
+        </p>
+      </div>
+
+      <!-- Reservation Form -->
+      <form id="inquiry-form" data-ntfy-url={ntfyUrl} class="space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+          
+          <!-- Full Name -->
+          <div class="space-y-2">
+            <label for="fullName" class="block text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-300 uppercase">
+              Your Name
+            </label>
+            <input
+              type="text"
+              id="fullName"
+              name="fullName"
+              required
+              placeholder="e.g. Rahul Sharma"
+              class="w-full px-4 py-3 rounded-xl bg-[#1B1C22] border border-[#282A33] text-sm text-white placeholder-neutral-500 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all duration-200"
+            />
+          </div>
+
+          <!-- Contact Email / Phone -->
+          <div class="space-y-2">
+            <label for="email" class="block text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-300 uppercase">
+              Phone Number (WhatsApp)
+            </label>
+            <input
+              type="tel"
+              id="email"
+              name="email"
+              required
+              placeholder="e.g. +91 98765 43210"
+              class="w-full px-4 py-3 rounded-xl bg-[#1B1C22] border border-[#282A33] text-sm text-white placeholder-neutral-500 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all duration-200"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
+          
+          <!-- Event Type Select -->
+          <div class="space-y-2">
+            <label for="eventType" class="block text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-300 uppercase">
+              Select Event Type (e.g., Wedding, Roka, Corporate, Birthday)
+            </label>
+            <select
+              id="eventType"
+              name="eventType"
+              class="w-full px-4 py-3 rounded-xl bg-[#1B1C22] border border-[#282A33] text-sm text-neutral-200 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all duration-200 cursor-pointer"
+            >
+              <option value="wedding">Grand Wedding / Reception</option>
+              <option value="pre-wedding">Pre-Wedding (Roka, Sangeet, Mehendi, Haldi)</option>
+              <option value="corporate">Corporate Event / Conference / Gala</option>
+              <option value="birthday">Birthday Party / Anniversary / Family Function</option>
+              <option value="destination">Destination Wedding (Full Resort Buyout)</option>
+            </select>
+          </div>
+
+          <!-- Estimated Guests Select -->
+          <div class="space-y-2">
+            <label for="guestCount" class="block text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-300 uppercase">
+              Estimated Guest Count
+            </label>
+            <select
+              id="guestCount"
+              name="guestCount"
+              class="w-full px-4 py-3 rounded-xl bg-[#1B1C22] border border-[#282A33] text-sm text-neutral-200 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all duration-200 cursor-pointer"
+            >
+              <option value="0-200">Up to 200 Guests (Intimate Function)</option>
+              <option value="200-400">200 – 400 Guests (Medium Gathering)</option>
+              <option value="400-600">400 – 600 Guests (Grand Celebration)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Special Requests & Dates -->
+        <div class="space-y-2">
+          <label for="specialRequests" class="block text-[11px] sm:text-xs font-semibold tracking-wider text-neutral-300 uppercase">
+            Preferred Dates &amp; Special Requirements
+          </label>
+          <textarea
+            id="specialRequests"
+            name="specialRequests"
+            rows="3"
+            placeholder="Share your expected event dates, catering preferences (Veg / Non-Veg), room requirements, or decor ideas..."
+            class="w-full px-4 py-3 rounded-xl bg-[#1B1C22] border border-[#282A33] text-sm text-white placeholder-neutral-500 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all duration-200 resize-none"
+          ></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <button
+          type="submit"
+          id="inquiry-btn"
+          class="w-full gold-button-gradient py-4 rounded-xl text-xs sm:text-sm font-bold tracking-[0.2em] text-[#0A0A0C] uppercase shadow-lg shadow-[#D4AF37]/20 focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2 focus:ring-offset-[#111216] transition-all duration-300"
+        >
+          Request a Call Back
+        </button>
+
+        <!-- Guarantee Note -->
+        <p class="text-[11px] text-center text-neutral-500 tracking-wide">
+          🔒 Best price guarantee • Multi-cuisine live catering • Dedicated event manager.
+        </p>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('inquiry-form') as HTMLFormElement | null;
+  const btn = document.getElementById('inquiry-btn') as HTMLButtonElement | null;
+
+  async function handleIncomingData(data: any) {
+    console.log("Data received:", data);
+    // Send push notification to your phone
+    try {
+      const ntfyUrl = (typeof process !== 'undefined' && process.env && process.env.NTFY_URL)
+        ? process.env.NTFY_URL
+        : (form?.dataset.ntfyUrl || 'https://ntfy.sh/my_secret_venue_leads_alert');
+
+      await fetch(ntfyUrl, {
+        method: 'POST',
+        body: `⚠️ New Data Received: ${JSON.stringify(data.message || data)}`,
+        headers: {
+          'Title': ' App Alert!',
+          'Priority': 'high', // Makes it sound/vibrate even on low battery modes
+          'Tags': 'warning,database' // Adds emojis automatically
+        }
+      });
+      console.log("Notification sent successfully!");
+    } catch (err) {
+      console.error("Failed to send notification:", err);
+    }
+  }
+
+  if (form) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const data = {
+        name: formData.get('fullName'),
+        phone: formData.get('email'),
+        eventType: formData.get('eventType'),
+        guestCount: formData.get('guestCount'),
+        specialRequests: formData.get('specialRequests'),
+        timestamp: new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })
+      };
+
+      if (btn) {
+        btn.disabled = true;
+        btn.innerText = 'SENDING INQUIRY...';
+      }
+
+      await handleIncomingData(data);
+
+      if (btn) {
+        btn.innerText = 'REQUEST RECEIVED - WE WILL CALL YOU SHORTLY';
+        btn.classList.add('opacity-90');
+      }
+
+      form.reset();
+    });
+  }
+</script>

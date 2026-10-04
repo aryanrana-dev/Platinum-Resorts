@@ -1,0 +1,143 @@
+---
+---
+
+<section id="hero" class="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[#0A0A0C]">
+  <!-- Subtle Ambient Glow Background -->
+  <div class="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-gradient-to-b from-[#D4AF37]/10 via-[#B89326]/5 to-transparent blur-3xl pointer-events-none -z-0"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Header Block -->
+    <div class="flex flex-col items-center text-center space-y-5 md:space-y-6 max-w-4xl mx-auto">
+      
+      <!-- Eyebrow Pill Badge -->
+      <div class="hero-fade inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#D4AF37]/10 border border-[#D4AF37]/30 text-[#E8C86A] text-[10px] sm:text-xs font-semibold tracking-[0.25em] uppercase shadow-[0_0_15px_rgba(212,175,55,0.15)]">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E8C86A] animate-pulse"></span>
+        <span>Grand Weddings, Celebrations &amp; Stays</span>
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E8C86A] animate-pulse"></span>
+      </div>
+
+      <!-- Main Title -->
+      <h1 class="hero-fade font-serif font-black text-4xl sm:text-6xl md:text-7xl lg:text-[76px] leading-[1.05] tracking-tight text-white uppercase">
+        Platinum Hotel <span class="gold-gradient-text">&amp; Resort</span>
+      </h1>
+
+      <!-- Italic Champagne Subheading -->
+      <p class="hero-fade font-serif-italic italic text-xl sm:text-2xl md:text-3xl text-[#F5E8C7] font-normal">
+        Unforgettable Celebrations Begin Here
+      </p>
+
+      <!-- Description Paragraph -->
+      <p class="hero-fade text-sm sm:text-base md:text-lg text-neutral-400 max-w-2xl font-light leading-relaxed">
+        The premier destination for grand weddings, luxurious stays, and memorable corporate events. Experience unmatched hospitality and elegant venues tailored for your biggest milestones.
+      </p>
+    </div>
+
+    <!-- Media Showcase Container (GSAP Scroll Target) -->
+    <div class="mt-10 md:mt-14 max-w-5xl mx-auto">
+      <div 
+        id="hero-media-container"
+        class="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-2xl border border-white/15 bg-[#111216] transition-transform duration-500 will-change-transform"
+      >
+        <!-- Desktop Video Background (750px or higher) -->
+        <video
+          autoplay
+          muted
+          loop
+          playsinline
+          poster="/assets/hero-poster.webp"
+          class="hidden min-[750px]:block w-full h-full object-cover object-center"
+        >
+          <source src="/assets/hero.mp4" type="video/mp4" />
+        </video>
+
+        <!-- Mobile Image Poster with CSS Ken Burns Effect (under 750px) -->
+        <img
+          src="/assets/hero-poster.webp"
+          alt="Platinum Hotel &amp; Resort Grand Estate"
+          class="block min-[750px]:hidden w-full h-full object-cover object-center animate-ken-burns will-change-transform"
+          loading="eager"
+        />
+
+        <!-- Cinematic Gradient Overlays -->
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0C]/90 via-black/20 to-[#0A0A0C]/40 pointer-events-none"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(10,10,12,0.85)_100%)] pointer-events-none"></div>
+
+        <!-- Top Left Estate Coordinates Badge -->
+        <div class="absolute top-4 left-4 sm:top-6 sm:left-6 z-20">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A0A0C]/75 backdrop-blur-md border border-white/15 text-[10px] sm:text-xs font-semibold tracking-widest text-[#F5E8C7] uppercase shadow-lg">
+            <span class="w-2 h-2 rounded-full bg-[#25D366]"></span>
+            <span>✦ Luxury Banquets, Lawns &amp; Suites – Zirakpur ✦</span>
+          </div>
+        </div>
+
+        <!-- Bottom Right Cinematic Info Badge -->
+        <div class="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 z-20 hidden sm:flex items-center gap-3">
+          <div class="px-3 py-1 rounded bg-[#0A0A0C]/80 backdrop-blur-md border border-white/10 text-[10px] tracking-widest text-neutral-400 font-mono">
+            GRAND WEDDING &amp; EVENT VENUE
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Call to Action Buttons -->
+    <div class="hero-fade mt-10 sm:mt-12 flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+      <a
+        href="#inquiries"
+        class="w-full sm:w-auto text-center gold-button-gradient px-8 py-3.5 rounded-full text-xs sm:text-sm font-bold tracking-widest text-[#0A0A0C] uppercase shadow-xl shadow-[#D4AF37]/25 hover:shadow-2xl transition-all duration-300"
+      >
+        Check Availability
+      </a>
+      <a
+        href="#spaces"
+        class="w-full sm:w-auto text-center px-8 py-3.5 rounded-full text-xs sm:text-sm font-semibold tracking-widest text-[#F5E8C7] uppercase border border-white/20 bg-[#111216]/60 backdrop-blur-md hover:bg-[#1B1C22] hover:border-[#D4AF37]/50 transition-all duration-300"
+      >
+        Explore Venues
+      </a>
+    </div>
+
+    <!-- Estate Trust Metrics Grid -->
+    <div class="hero-fade mt-16 sm:mt-20 pt-10 border-t border-white/10 max-w-4xl mx-auto">
+      <div class="grid grid-cols-3 gap-4 sm:gap-8 text-center">
+        <!-- Metric 1 -->
+        <div class="flex flex-col items-center">
+          <span class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-[#E8C86A] tracking-tight">
+            47,500
+          </span>
+          <span class="text-[10px] sm:text-xs tracking-[0.2em] text-neutral-400 uppercase font-medium mt-1">
+            Sq. Ft. Area
+          </span>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="flex flex-col items-center border-x border-white/10 px-2 sm:px-6">
+          <span class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-[#E8C86A] tracking-tight">
+            5-Star
+          </span>
+          <span class="text-[10px] sm:text-xs tracking-[0.2em] text-neutral-400 uppercase font-medium mt-1">
+            Hospitality Rating
+          </span>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="flex flex-col items-center">
+          <span class="font-serif font-bold text-2xl sm:text-3xl md:text-4xl text-[#E8C86A] tracking-tight">
+            500+
+          </span>
+          <span class="text-[10px] sm:text-xs tracking-[0.2em] text-neutral-400 uppercase font-medium mt-1">
+            Celebrations Hosted
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Downward Scroll Indicator -->
+    <div class="mt-12 flex justify-center">
+      <a href="#spaces" class="text-neutral-500 hover:text-[#D4AF37] transition-colors animate-bounce" aria-label="Scroll to Spaces">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+
+  </div>
+</section>
