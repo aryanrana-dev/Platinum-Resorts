@@ -61,6 +61,31 @@ const spacesData: SpaceItem[] = [
     imageUrl: '/assets/venue-image%20(6).webp',
     badge: 'Banquet Hall',
   },
+  {
+    id: 'banquet-hall-4',
+    imageUrl: '/assets/venue-image%20(7).webp',
+    badge: 'Banquet Hall',
+  },
+  {
+    id: 'botanical-lawn-2',
+    imageUrl: '/assets/venue-image%20(8).webp',
+    badge: 'Open-Air Lawn',
+  },
+  {
+    id: 'botanical-lawn-3',
+    imageUrl: '/assets/venue-image%20(9).webp',
+    badge: 'Open-Air Lawn',
+  },
+  {
+    id: 'banquet-hall-5',
+    imageUrl: '/assets/venue-image%20(10).webp',
+    badge: 'Banquet Hall',
+  },
+  {
+    id: 'banquet-hall-6',
+    imageUrl: '/assets/venue-image%20(11).webp',
+    badge: 'Banquet Hall',
+  },
 ];
 
 export default function SpacesCarousel() {
@@ -166,8 +191,8 @@ export default function SpacesCarousel() {
               onClick={scrollPrev}
               disabled={prevBtnDisabled}
               className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${prevBtnDisabled
-                  ? 'border-neutral-200 text-neutral-300 cursor-not-allowed opacity-40'
-                  : 'border-neutral-300 text-neutral-700 hover:border-[#D4AF37] hover:text-[#B89326] hover:bg-neutral-100 shadow-sm active:scale-95'
+                ? 'border-neutral-200 text-neutral-300 cursor-not-allowed opacity-40'
+                : 'border-neutral-300 text-neutral-700 hover:border-[#D4AF37] hover:text-[#B89326] hover:bg-neutral-100 shadow-sm active:scale-95'
                 }`}
               aria-label="Previous space"
             >
@@ -178,8 +203,8 @@ export default function SpacesCarousel() {
               onClick={scrollNext}
               disabled={nextBtnDisabled}
               className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all duration-200 ${nextBtnDisabled
-                  ? 'border-neutral-200 text-neutral-300 cursor-not-allowed opacity-40'
-                  : 'border-neutral-300 text-neutral-700 hover:border-[#D4AF37] hover:text-[#B89326] hover:bg-neutral-100 shadow-sm active:scale-95'
+                ? 'border-neutral-200 text-neutral-300 cursor-not-allowed opacity-40'
+                : 'border-neutral-300 text-neutral-700 hover:border-[#D4AF37] hover:text-[#B89326] hover:bg-neutral-100 shadow-sm active:scale-95'
                 }`}
               aria-label="Next space"
             >
@@ -225,8 +250,8 @@ export default function SpacesCarousel() {
                 type="button"
                 onClick={() => scrollTo(index)}
                 className={`h-2 rounded-full transition-all duration-300 ${index === selectedIndex
-                    ? 'w-8 bg-[#B89326]'
-                    : 'w-2 bg-neutral-300 hover:bg-neutral-400'
+                  ? 'w-8 bg-[#B89326]'
+                  : 'w-2 bg-neutral-300 hover:bg-neutral-400'
                   }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
